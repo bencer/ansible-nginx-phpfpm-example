@@ -1,0 +1,13 @@
+---
+php5_packages:
+  - php5-json
+  - php5-curl
+  - php5-mcrypt
+
+php5_pools: [ '{{ php5_pool_default }}' ]
+php5_pool_default:
+  enabled: True
+  name: 'www-data'
+  listen: '/var/run/php5-fpm.sock'
+  pm_status: True
+  pm_status_path: '/php-status'

@@ -1,0 +1,13 @@
+---
+- hosts: lemp
+  sudo: yes
+
+  vars_files:
+    - vars_nginx.yaml
+    - vars_php.yaml
+    - vars_sd.yaml
+
+  roles:
+    - role: jdauphant.nginx
+    - role: debops.php5
+    - role: serverdensity

@@ -1,0 +1,5 @@
+---
+sd_account: bencer
+api_token: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+plugins:
+  - nginx
