@@ -1,5 +1,19 @@
 ---
 sd_account: bencer
 api_token: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+backup_configcfg: no
+delete_example: True
+group_name: staging
+log_level: DEBUG
 plugins:
   - nginx
+  - phpfpm
+sd_checks:
+  nginx:
+    init_config:
+    instances:
+      - nginx_status_url: http://example.com/server-status/
+  php_fpm:
+    init_config:
+    instances:
+      - status_url: http://example.com/php-status

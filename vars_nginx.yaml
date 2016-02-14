@@ -1,3 +1,4 @@
+---
 nginx_official_repo: True
 keep_only_specified: True
 
@@ -17,6 +18,13 @@ nginx_sites:
     - root /srv/www/{{ vdomain }}/
     - location /server-status {
             stub_status on;
+            access_log false;
+            allow 127.0.0.1;
+            deny all; }
+    - location /php-status {
+            fastcgi_param SCRIPT_FILENAME /srv/www/{{ vdomain }}$fastcgi_script_name;
+            fastcgi_pass php;
+            include fastcgi_params;
             access_log false;
             allow 127.0.0.1;
             deny all; }
